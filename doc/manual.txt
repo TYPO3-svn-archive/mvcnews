@@ -1,0 +1,84 @@
+
+
+MVC:
+---------
+1) Folder "controller":
+each frontend plugin has a own controller:
+	each controller has <actionname>Action() methods that are automatically called if a argument "action" was found by the actionController
+	each controller has to set
+		- argumentNamespace
+		-extensionKey
+		- can set "defaultActionMethodName"
+		
+		e.g.
+			protected $extensionKey = 'objects';
+			protected $defaultActionMethodName = 'showListAction';
+			protected $argumentsNamespace = 'objects';
+			
+	each action has his view autoloaded and should use $this->view (its a default empty view or the view detected by following namingconvention)
+
+2) Folder "configuration"
+
+Just a place to store configuration related files (they need to be referenced the TYPO3 way in ext_tables and ext_localconf):
+ *flexform DS for the plugins
+ *static templates
+ (maybe a defaultconfiguration.php)
+ 
+3) Folder "view"
+	Subfolder <controllername>
+		File tx_<extensionkey>_view_<actionNameohne"action">
+		
+4) Folder "templates"
+Place for templates.
+Recommended structure:
+	Subfolder <controllername>
+	
+Later a configuration can be used to specify a diffrent templatefolder (projectspecific templating)
+
+5) Folder "domain"
+The domain logic of the application (DDD)
+
+6) Folder "presentationmodel"
+If domain objects are not directly viewable (becaue you need other infos in the view)
+This is the place to store your presentationmodel (wrapper or mapper to domainmoddel)
+
+7) Folder "tests"
+ Unit tests (for domain at least)
+ 
+ 
+
+
+Offene TODOS:
+-------------
+fieldRenderer
+und 
+tcaRender
+noch weitgehend ohne funktionen.
+...
+
+
+
+
+
+By default supported Configurations
+-------------------
+$this->configuration('ajaxPageType')   (is used in action Controller to initilise the linkCreator with ajax context infos - see below)
+
+
+
+
+Usage of the linkCreator helper in views:
+----------------------------------------------
+The linkCreator has actual contextinfos (like namespace)
+and offers several get*Link Methods for several usecases (see comments) to get a new initislized link object.
+
+$this->linkCreator->getActionLink('label','action')->set.....->set...
+
+
+
+
+AJAX:
+--------
+Two ways:
+1) eId
+2) build in support: Ajax request is handeled by special pagetype / In the request a parameter "mvcinstance" can be given - this is used internally by the actionController to load the correct flexform configuration

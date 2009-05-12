@@ -1,0 +1,17 @@
+# Common configuration
+plugin.tx_mvcnews_controller_default.configuration {
+	ajaxPageType = 9112008
+	pagination.action = showlist
+	noJqueryInclude=0
+	pagination.actionAjax = ajaxshowlist
+	itemsPerPage = 10
+	presentationModel {
+		article {
+			image {
+				maxH=100
+				
+			}
+		}
+	}
+}
+

@@ -1,0 +1,61 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+  <sheets>
+	<commonsettings>
+	  <ROOT>
+		<TCEforms>
+			<sheetTitle>TITLE</sheetTitle>
+		</TCEforms>
+	    <type>array</type>
+	    <el>
+	     <field_controller>
+			<TCEforms>
+				<label>Controller</label>
+				<config>
+					<type>select</type>
+					<items type="array">
+						<numIndex index="0" type="array">
+							<numIndex index="0">Object controller (list,single,search)</numIndex>
+							<numIndex index="1">default</numIndex>
+						</numIndex>
+						<numIndex index="1" type="array">
+							<numIndex index="0">Show Downloads</numIndex>
+							<numIndex index="1">downloads</numIndex>
+						</numIndex>
+					</items>
+				</config>
+			</TCEforms>
+	      </field_controller>	     
+	    </el>
+	  </ROOT>
+    </commonsettings>
+    <listsettings>
+	  <ROOT>
+		<TCEforms>
+			<sheetTitle>List</sheetTitle>
+		</TCEforms>
+	    <type>array</type>
+	    <el>	    
+	      <itemsPerPage>
+			<TCEforms>
+				<label>itemsPerPage</label>
+				<config>
+					<type>input</type>
+				</config>
+			</TCEforms>
+	      </itemsPerPage>
+	      <somecheck>
+			<TCEforms>
+				<label>Somecheck</label>
+				<config>
+					<type>check</type>
+				</config>
+			</TCEforms>
+	      </somecheck>
+	    </el>
+	  </ROOT>
+    </listsettings>
+  </sheets>
+</T3DataStructure>

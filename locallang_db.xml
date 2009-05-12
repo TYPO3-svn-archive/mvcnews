@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'objects'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_mvcnews_article">News (mvcnews)</label>
+			<label index="tx_mvcnews_article.title">title</label>
+			<label index="tx_mvcnews_article.date">date</label>
+			<label index="tx_mvcnews_article.description">description</label>
+			<label index="tx_mvcnews_article.image">image</label>
+			<label index="tx_mvcnews_article.category">category</label>
+			<label index="tx_mvcnews_article.downloads">downloads</label>
+			<label index="tx_mvcnews_category">object category</label>
+			<label index="tx_mvcnews_category.title">title</label>
+			<label index="tt_content.list_type_pi1">MVC-News Outputs</label>
+			<label index="tt_content.list_type_pi2">MVC-News USER_INT Test</label>
+			<label index="tx_mvcnews_downloads">News Downloads</label>
+			<label index="tx_mvcnews_downloads.title">title</label>
+			<label index="tx_mvcnews_downloads.filepath">file</label>
+			<label index="tx_mvcnews_downloads.description">description</label>
+			<label index="tx_mvcnews_downloads.image">image</label>
+			<label index="tx_mvcnews_downloads.caption">image caption</label>
+			<label index="tx_mvcnews_downloads.news">news</label>
+			<label index="tx_mvcnews_downloads.flags">flags</label>
+		</languageKey>
+	</data>
+</T3locallang>
