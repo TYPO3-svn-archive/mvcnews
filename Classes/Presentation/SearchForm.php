@@ -21,8 +21,6 @@
 *
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
-require_once(t3lib_extMgm::extPath("mvcnews").'domain/model/class.tx_mvcnews_domain_model_categoryRepository.php');
-require_once t3lib_extMgm::extPath('mvc') . 'mvc/presentation/form/class.tx_mvc_presentation_form_simpleForm.php';
 
 /**
  * searchform representing the search formular
@@ -33,11 +31,14 @@ require_once t3lib_extMgm::extPath('mvc') . 'mvc/presentation/form/class.tx_mvc_
  */
 class tx_mvcnews_presentation_searchform extends tx_mvc_presentation_form_simpleForm {
 	
+	private $categoryRepository;
+	
 	/**
 	 * inits the form structure
 	 * @param array $arguments
 	 */	
-	public function __construct() {			
+	public function __construct(tx_mvcnews_domain_model_categoryRepository $categoryRepository) {	
+		$this->categoryRepository = $categoryRepository;		
 		$this->addElement(new tx_mvc_presentation_form_selectElement('withpicture','','radio',
 															null,
 															array('1'=>'ja','0'=>'nein')
@@ -61,8 +62,8 @@ class tx_mvcnews_presentation_searchform extends tx_mvc_presentation_form_simple
 	* @return array
 	*/
 	private function getSelectArrayForCategory() {
-		$rep=tx_picocontainer_IoC_manager::getSingleton('tx_mvcnews_domain_model_categoryRepository');
-		$categorys=$rep->findAll();
+		
+		$categorys=$this->categoryRepository->findAll();
 		
 		$sel=array(''=>'');
 		foreach ($categorys as $category) {

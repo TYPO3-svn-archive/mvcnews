@@ -22,16 +22,12 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-require_once(t3lib_extMgm::extPath("mvcnews").'domain/model/class.tx_mvcnews_domain_model_category.php');
-
-tx_picocontainer_IoC_manager::registerSingleton('tx_mvcnews_domain_model_categoryRepository');
-
 /**
  * Domain Class "articleRepository". A Repository to get Articles
  *
  * @author	Daniel Pötzinger
  */
-class tx_mvcnews_domain_model_categoryRepository extends tx_mvc_domain_abstractRepository {
+class Tx_Mvcnews_Domain_Model_CategoryRepository extends tx_mvc_domain_abstractRepository {
 	
 	
 }

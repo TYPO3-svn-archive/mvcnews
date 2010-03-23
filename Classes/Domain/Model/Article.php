@@ -22,17 +22,15 @@
 *  This copyright notice MUST APPEAR in all copies of the script!
 ***************************************************************/
 
-tx_picocontainer_IoC_manager::registerPrototype('tx_mvcnews_domain_model_article');
 
-//register this class to the class2TableMapping object
-tx_picocontainer_IoC_manager::getSingleton('tx_mvc_system_persitence_class2TableMapping')->addMapping('tx_mvcnews_article','tx_mvcnews_domain_model_article');
+
 
 /**
  * Domain Class "article"
  *
  * @author	Daniel Pötzinger
  */
-class tx_mvcnews_domain_model_article extends tx_mvc_domain_abstractObject {
+class Tx_Mvcnews_Domain_Model_Article extends tx_mvc_domain_abstractObject {
 	
 }
 

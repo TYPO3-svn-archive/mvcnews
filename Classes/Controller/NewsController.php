@@ -30,6 +30,11 @@
  * @subpackage	tx_objects
  */
 class Tx_Mvcnews_Controller_NewsController extends tx_mvc_controller_action {
+	/**
+	 * flag if for view autoloading the extbase convention should be used
+	 * @var boolean
+	 */
+	protected $useExtBaseConvention = TRUE;
 	
 	/**
 	 * @var        string
@@ -39,7 +44,7 @@ class Tx_Mvcnews_Controller_NewsController extends tx_mvc_controller_action {
 	/**
 	 * @var        string
 	 */
-	protected $defaultActionMethodName = 'showlistAction';
+	protected $defaultActionMethodName = 'showListAction';
 	
 	/**
 	 * @var        string
@@ -60,12 +65,14 @@ class Tx_Mvcnews_Controller_NewsController extends tx_mvc_controller_action {
 	 */
 	private $articleRepository = NULL;
 	
+	
+	
 	/**
 	 * common controller initialization (called by framework)
 	 *
 	 */
-	protected function initializeController() {
-		$this->articleRepository = new Tx_Mvcnews_Domain_Model_ArticleRepository();
+	protected function initializeController() {		
+		$this->articleRepository = $this->container->getInstance('Tx_Mvcnews_Domain_Model_ArticleRepository');
 	}
 	
 	/**
@@ -85,9 +92,9 @@ class Tx_Mvcnews_Controller_NewsController extends tx_mvc_controller_action {
 	 *
 	 * @return string
 	 */
-	public function showlistAction() {
+	public function showListAction() {
 		
-		$searchFormmodel = new tx_mvcnews_presentation_searchform ( );
+		$searchFormmodel = $this->container->getInstance('Tx_Mvcnews_Presentation_SearchForm');;
 		$searchFormmodel->setArguments ( $this->arguments );
 		
 		//only use criteria to search if searchform was valid
@@ -100,7 +107,7 @@ class Tx_Mvcnews_Controller_NewsController extends tx_mvc_controller_action {
 		$paginationSubView = $this->getPaginationSubView ( $criteria );
 		$listSubView = $this->getListSubView ( $this->getArticleCollection ( $criteria, $this->arguments ['offset'] ) );
 		
-		$searchFormSubView = new tx_mvcnews_view_default_subview_searchFormView ( );
+		$searchFormSubView = $this->container->getInstance('Tx_Mvcnews_View_News_Subview_SearchForm');
 		$this->initializeView ( $searchFormSubView );
 		$searchFormSubView->setFormModel ( $searchFormmodel );
 		
@@ -143,12 +150,12 @@ class Tx_Mvcnews_Controller_NewsController extends tx_mvc_controller_action {
 	 *
 	 * @return string
 	 */
-	public function showdetailAction() {
+	public function showDetailAction() {
 		if (empty ( $this->arguments ['id'] )) {
 			return 'no id given';
 		}
 		
-		$this->view->setArticle ( new tx_mvcnews_presentation_articlePresentationModel ( $this->articleRepository->findById ( $this->arguments ['id'] ), $this->configuration->get ( 'presentationModel.article.' ), 'tx_mvcnews_article' ) );
+		$this->view->assign ('article',  new tx_mvcnews_presentation_articlePresentationModel ( $this->articleRepository->findById ( $this->arguments ['id'] ), $this->configuration->get ( 'presentationModel.article.' ), 'tx_mvcnews_article' ) );
 		return $this->view->render ();
 	}
 	
