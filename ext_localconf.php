@@ -21,11 +21,11 @@ RTE.config.tx_mvcnews_object.description {
 ');
 
 $pluginListTypeKey=$_EXTKEY.'_plugin2';
-tx_mvc_extMgm::addSimplePluginController($_EXTKEY,$pluginListTypeKey,'uncachedtest',1);
+tx_mvc_extMgm::addSimplePluginController($_EXTKEY,$pluginListTypeKey,'UncachedTestController',1);
 
 $pluginListTypeKey=$_EXTKEY.'_plugin';
-tx_mvc_extMgm::addSwitchedPluginController($_EXTKEY,$pluginListTypeKey,array('default','downloads'),'commonsettings.field_controller',0);
-tx_mvc_extMgm::addAjaxResponsePageType($_EXTKEY,$pluginListTypeKey,'default',9112008,'mvcnews');
+tx_mvc_extMgm::addSwitchedPluginController($_EXTKEY,$pluginListTypeKey,array('NewsController','DownloadsController'),'commonsettings.field_controller',0);
+tx_mvc_extMgm::addAjaxResponsePageType($_EXTKEY,$pluginListTypeKey,'NewsController',9112008,'mvcnews');
 
 
 ?>
