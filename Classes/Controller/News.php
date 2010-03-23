@@ -22,11 +22,6 @@
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 
-require_once (t3lib_extMgm::extPath ( "mvcnews" ) . 'domain/model/class.tx_mvcnews_domain_model_articleRepository.php');
-
-require_once (t3lib_extMgm::extPath ( "mvcnews" ) . 'presentation/class.tx_mvcnews_presentation_articlePresentationModel.php');
-require_once (t3lib_extMgm::extPath ( "mvcnews" ) . 'presentation/class.tx_mvcnews_presentation_searchform.php');
-require_once (t3lib_extMgm::extPath ( "mvcnews" ) . 'view/default/subview/class.tx_mvcnews_view_default_subview_searchFormView.php');
 /**
  * Default Controller for the 'objects' extension.
  *
@@ -34,7 +29,7 @@ require_once (t3lib_extMgm::extPath ( "mvcnews" ) . 'view/default/subview/class.
  * @package	TYPO3
  * @subpackage	tx_objects
  */
-class tx_mvcnews_controller_default extends tx_mvc_controller_action {
+class Tx_Mvcnews_Controller_News extends tx_mvc_controller_action {
 	
 	/**
 	 * @var        string
