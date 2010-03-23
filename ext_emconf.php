@@ -19,6 +19,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'shy' => '',
 	'dependencies' => 'tcaobjects',
 	'conflicts' => '',
+	'newConvention' => 1,
 	'priority' => '',
 	'module' => '',
 	'state' => '',
