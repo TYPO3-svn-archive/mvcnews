@@ -31,15 +31,7 @@ require_once(t3lib_extMgm::extPath("mvc").'mvc/view/class.tx_mvc_view_phpTemplat
  * @subpackage mvc
  * @version $Id$
  */
-class tx_mvcnews_view_default_showlist extends tx_mvc_view_phpTemplate {
-
-	/**
-	 * The default template is used if o template is set
-	 *
-	 * @var string
-	 */
-	protected $defaultTemplate='EXT:mvcnews/templates/default/showlist.php';
-	
+class Tx_Mvcnews_View_Default_ShowList extends tx_mvc_view_phpTemplate {	
 
 	protected $listView;
 	protected $pagination;
@@ -50,7 +42,7 @@ class tx_mvcnews_view_default_showlist extends tx_mvc_view_phpTemplate {
 	 *
 	 * @param tx_mvc_view_phpTemplate $paginationView
 	 */
-	public function setListViewSubView($listView) {
+	public function setListViewSubView(tx_mvc_view_phpTemplate $listView) {
 		$this->listView=$listView;
 
 	}

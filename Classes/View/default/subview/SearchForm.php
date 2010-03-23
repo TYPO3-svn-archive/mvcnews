@@ -31,7 +31,7 @@ require_once(t3lib_extMgm::extPath("mvc").'mvc/view/class.tx_mvc_view_phpTemplat
  * @subpackage mvc
  * @version $Id$
  */
-class tx_mvcnews_view_default_subview_searchFormView extends tx_mvc_view_phpTemplate {
+class Tx_Mvcnews_View_Default_SubView_SearchForm extends tx_mvc_view_phpTemplate {
 	
 	/**
 	 * The default template is used if o template is set

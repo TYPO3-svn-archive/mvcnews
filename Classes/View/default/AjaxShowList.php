@@ -31,7 +31,7 @@ require_once(t3lib_extMgm::extPath("mvc").'mvc/view/class.tx_mvc_view_ajaxJquery
  * @subpackage mvc
  * @version $Id$
  */
-class tx_mvcnews_view_default_ajaxshowlist extends tx_mvc_view_ajaxJqueryView {
+class Tx_Mvcnews_View_Default_AjaxShowList extends tx_mvc_view_ajaxJqueryView {
 
 	protected $listView;
 	protected $pagination;
