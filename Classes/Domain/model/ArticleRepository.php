@@ -30,7 +30,7 @@ tx_picocontainer_IoC_manager::registerSingleton('tx_mvcnews_domain_model_article
  *
  * @author	Daniel Pötzinger
  */
-class tx_mvcnews_domain_model_articleRepository extends tx_mvc_domain_abstractRepository {
+class Tx_Mvcnews_Domain_Model_ArticleRepository extends tx_mvc_domain_abstractRepository {
 	
 	/**
 	 * A first prototype for a find by criteria.

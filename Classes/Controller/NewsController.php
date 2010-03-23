@@ -29,7 +29,7 @@
  * @package	TYPO3
  * @subpackage	tx_objects
  */
-class Tx_Mvcnews_Controller_News extends tx_mvc_controller_action {
+class Tx_Mvcnews_Controller_NewsController extends tx_mvc_controller_action {
 	
 	/**
 	 * @var        string
@@ -65,7 +65,7 @@ class Tx_Mvcnews_Controller_News extends tx_mvc_controller_action {
 	 *
 	 */
 	protected function initializeController() {
-		$this->articleRepository = tx_picocontainer_IoC_manager::getSingleton ( 'tx_mvcnews_domain_model_articleRepository' );
+		$this->articleRepository = new Tx_Mvcnews_Domain_Model_ArticleRepository();
 	}
 	
 	/**

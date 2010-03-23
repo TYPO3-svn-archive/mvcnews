@@ -18,11 +18,11 @@
 					<items type="array">
 						<numIndex index="0" type="array">
 							<numIndex index="0">Object controller (list,single,search)</numIndex>
-							<numIndex index="1">default</numIndex>
+							<numIndex index="1">NewsController</numIndex>
 						</numIndex>
 						<numIndex index="1" type="array">
 							<numIndex index="0">Show Downloads</numIndex>
-							<numIndex index="1">downloads</numIndex>
+							<numIndex index="1">DownloadControllers</numIndex>
 						</numIndex>
 					</items>
 				</config>
